@@ -1,12 +1,11 @@
 const express = require('express');
 const routes = require('./routes');
 
-const app = express()
-const port = 3333
+const app = express();
+const port = 3333;
 
 routes(app);
 
-
-app.listen(port, ()=> console.log(`is runing port: ${port}`));
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;
