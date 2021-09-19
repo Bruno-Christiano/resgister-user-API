@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv');
 
 module.exports = {
   development: {
@@ -16,7 +16,13 @@ module.exports = {
     dialect: 'mysql',
   },
   production: {
-    url: process.env.DATABASE_URL,
+    username: process.env.PROD_DB_USERNAME,
+    password: process.env.PROD_DB_PASSWORD,
+    database: process.env.PROD_DB_NAME,
+    host: process.env.PROD_DB_HOSTNAME,
+    port: process.env.PROD_DB_PORT,
     dialect: 'postgres',
+    // url: process.env.DATABASE_URL,
+    // // dialect: 'postgres',
   },
 };
